@@ -28,7 +28,7 @@ namespace EZ_Notes
             if (title != "")
                 this.title = title;
             else
-                this.title = String.Format("Note n°{0}", id);
+                this.title = String.Format("Note n°{0}", menu.listNotes.Count()+1);
             if (date != null)
                 this.date = DateTime.Now.ToString("HH:mm:ss");
             else
