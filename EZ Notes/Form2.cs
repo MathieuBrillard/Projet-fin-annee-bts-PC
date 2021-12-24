@@ -30,7 +30,7 @@ namespace EZ_Notes
             else
                 this.title = String.Format("Note n°{0}", menu.listNotes.Count()+1);
             if (date != null)
-                this.date = DateTime.Now.ToString("HH:mm:ss");
+                this.date = DateTime.Now.ToString("HH:mm:ss dd/MM/yyyy");
             else
                 this.date = date;
             this.Text = this.title;
@@ -66,12 +66,26 @@ namespace EZ_Notes
         private void noteToolStripMenuAccueil_Click(object sender=null, EventArgs e=null)
         {
             this.Hide();
-            menu.UpdateNoteContent(this.id, this.contenu);
+            //menu.UpdateNoteContent(this.id, this.contenu);
+            menu.SaveNote(this);
         }
 
         private void nouvelleNoteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             menu.menuStripPrincipalAddNote_Click();
+        }
+
+        private void UpdateTime()
+        {
+            string dateTime = DateTime.Now.ToString("HH:mm:ss dd/MM/yyyy");
+
+            this.date = dateTime;
+            DataGridView viewNotes = menu.GetViewNotes();
+            foreach (DataGridViewRow row in viewNotes.Rows)
+            {
+                if (row.Index == this.menu.listNotes.IndexOf(this))
+                    row.Cells[2].Value = date;
+            }
         }
 
         private void noteContent_TextChanged(object sender, EventArgs e)
@@ -83,6 +97,7 @@ namespace EZ_Notes
                 if (row.Index == this.menu.listNotes.IndexOf(this))
                     row.Cells[1].Value = contenu;
             }
+            UpdateTime();
         }
 
         private void Note_KeyPress(object sender, KeyPressEventArgs e)

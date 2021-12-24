@@ -42,11 +42,11 @@
             this.menuStripPrincipalOuvrir = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripPrincipalSupprimer = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripPrincipalParam = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStripPrincipalCompte = new System.Windows.Forms.ToolStripMenuItem();
             this.ViewNotes = new System.Windows.Forms.DataGridView();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.content = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menuStripPrincipalCompte = new System.Windows.Forms.ToolStripMenuItem();
             this.trayMenu.SuspendLayout();
             this.menuStripPrincipal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ViewNotes)).BeginInit();
@@ -151,6 +151,12 @@
             this.menuStripPrincipalParam.Size = new System.Drawing.Size(78, 20);
             this.menuStripPrincipalParam.Text = "Paramètres";
             // 
+            // menuStripPrincipalCompte
+            // 
+            this.menuStripPrincipalCompte.Name = "menuStripPrincipalCompte";
+            this.menuStripPrincipalCompte.Size = new System.Drawing.Size(62, 20);
+            this.menuStripPrincipalCompte.Text = "Compte";
+            // 
             // ViewNotes
             // 
             this.ViewNotes.AllowUserToAddRows = false;
@@ -188,15 +194,10 @@
             // 
             // date
             // 
-            this.date.HeaderText = "Date";
+            this.date.HeaderText = "Dernière Modification";
             this.date.Name = "date";
             this.date.ReadOnly = true;
-            // 
-            // menuStripPrincipalCompte
-            // 
-            this.menuStripPrincipalCompte.Name = "menuStripPrincipalCompte";
-            this.menuStripPrincipalCompte.Size = new System.Drawing.Size(62, 20);
-            this.menuStripPrincipalCompte.Text = "Compte";
+            this.date.Width = 150;
             // 
             // MenuPrincipal
             // 
@@ -235,11 +236,11 @@
         private System.Windows.Forms.DataGridView ViewNotes;
         private System.Windows.Forms.ToolStripMenuItem menuStripPrincipalOuvrir;
         private System.Windows.Forms.ToolStripMenuItem menuStripPrincipalSupprimer;
+        private System.Windows.Forms.ToolStripMenuItem menuStripPrincipalParam;
+        private System.Windows.Forms.ToolStripMenuItem menuStripPrincipalCompte;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn content;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.ToolStripMenuItem menuStripPrincipalParam;
-        private System.Windows.Forms.ToolStripMenuItem menuStripPrincipalCompte;
     }
 }
 

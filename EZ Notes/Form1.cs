@@ -142,7 +142,8 @@ namespace EZ_Notes
             while (sqlite_datareader.Read())
             {
                 this.listNotes.Add(new Note(this, sqlite_datareader.GetInt32(0),
-                    sqlite_datareader.GetString(1), sqlite_datareader.GetString(2)));
+                    sqlite_datareader.GetString(1), sqlite_datareader.GetString(2),
+                    sqlite_datareader.GetString(3)));
             }
             foreach (Note note in this.listNotes)
             {
@@ -241,9 +242,12 @@ namespace EZ_Notes
             if (this.authenticatedUser == null)
                 return;
             cmd = new SQLiteCommand(String.Format(@"
-                INSERT INTO Notes(name, content, date)
-                VALUES('{1}','{2}', '{3}')",
-                note.GetTitle(), note.GetContenu(), note.GetDate()),
+                UPDATE Notes
+                SET name='{0}',
+                content='{1}',
+                date='{2}'
+                WHERE id='{3}'",
+                note.GetTitle(), note.GetContenu(), note.GetDate(), note.GetId()),
                 this.conn);
             cmd.ExecuteNonQuery();
         }
