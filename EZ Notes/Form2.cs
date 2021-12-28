@@ -43,6 +43,20 @@ namespace EZ_Notes
 
         public void SetTitle(string title) { this.title = title; }
 
+        public string FormatContent()
+        {
+            int i;
+
+            i = 0;
+            foreach (char lettre in this.contenu)
+            {
+                if (lettre == '\'')
+                    this.contenu = this.contenu.Insert(i + 1, "'");
+                i++;
+            }
+            return this.contenu;
+        }
+
         private void accueilToolStripMenuItem_Click(object sender, EventArgs e)
         {
 

@@ -239,15 +239,15 @@ namespace EZ_Notes
         {
             SQLiteCommand cmd;
 
+            Console.WriteLine(note.FormatContent());
             if (this.authenticatedUser == null)
                 return;
-            cmd = new SQLiteCommand(String.Format(@"
-                UPDATE Notes
-                SET name='{0}',
-                content='{1}',
-                date='{2}'
-                WHERE id='{3}'",
-                note.GetTitle(), note.GetContenu(), note.GetDate(), note.GetId()),
+            cmd = new SQLiteCommand(String.Format("UPDATE Notes " +
+                "SET name='{0}',"+
+                "content='{1}',"+
+                "date='{2}' "+
+                "WHERE id='{3}'",
+                note.GetTitle(), note.FormatContent(), note.GetDate(), note.GetId()),
                 this.conn);
             cmd.ExecuteNonQuery();
         }
