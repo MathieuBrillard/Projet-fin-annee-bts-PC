@@ -16,10 +16,12 @@ namespace EZ_Notes
         public List<Note> listNotes;
         private SQLiteConnection conn;
         private UserInfo authenticatedUser;
+        public bool init;
 
         public MenuPrincipal()
         {
             InitializeComponent();
+            this.init = true;
             listNotes = new List<Note>();
             this.conn = CreateConnection();
             ConnexionForm formulaireConn = new ConnexionForm(this.conn, this);
@@ -149,6 +151,7 @@ namespace EZ_Notes
             {
                 ViewNotes.Rows.Add(note.GetTitle(), note.GetContenu(), note.GetDate());
             }
+            this.init = false;
         }
 
         public void UpdateNoteTitle(int id, string title)
@@ -239,7 +242,6 @@ namespace EZ_Notes
         {
             SQLiteCommand cmd;
 
-            Console.WriteLine(note.FormatContent());
             if (this.authenticatedUser == null)
                 return;
             cmd = new SQLiteCommand(String.Format("UPDATE Notes " +
