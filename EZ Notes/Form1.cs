@@ -245,11 +245,11 @@ namespace EZ_Notes
             if (this.authenticatedUser == null)
                 return;
             cmd = new SQLiteCommand(String.Format("UPDATE Notes " +
-                "SET name='{0}',"+
-                "content='{1}',"+
+                "SET name='{0}', "+
+                "content='{1}', "+
                 "date='{2}' "+
-                "WHERE id='{3}'",
-                note.GetTitle(), note.FormatContent(), note.GetDate(), note.GetId()),
+                "WHERE id='{3}';",
+                note.GetTitle(), note.FormatContentToDB(), note.GetDate(), note.GetId()),
                 this.conn);
             cmd.ExecuteNonQuery();
         }
