@@ -106,7 +106,7 @@ namespace EZ_Notes
             string emailDB = null;
 
             cmd = new SQLiteCommand(String.Format(@"SELECT * FROM Users
-                WHERE Users.name='{0}' AND Users.password='{1}'", username, pwd), conn);
+                WHERE Users.name='{0}' AND Users.password='{1}';", username, pwd), conn);
             sqlite_datareader = cmd.ExecuteReader();
 
             while (sqlite_datareader.Read())
@@ -138,7 +138,7 @@ namespace EZ_Notes
             cmd = new SQLiteCommand(String.Format(@"SELECT * FROM Notes 
                 INNER JOIN UserToNote on Notes.id = UserToNote.idNote 
                 INNER JOIN Users on UserToNote.idUser = Users.id
-                WHERE Users.id={0}", this.authenticatedUser.GetId()), this.conn);
+                WHERE Users.id={0};", this.authenticatedUser.GetId()), this.conn);
             sqlite_datareader = cmd.ExecuteReader();
 
             while (sqlite_datareader.Read())
@@ -161,7 +161,7 @@ namespace EZ_Notes
             cmd = new SQLiteCommand(String.Format(@"
                     UPDATE Notes
                     SET name='{0}'
-                    WHERE id='{1}'", title, id), this.conn);
+                    WHERE id='{1}';", title, id), this.conn);
             cmd.ExecuteNonQuery();
         }
 
@@ -172,7 +172,7 @@ namespace EZ_Notes
             cmd = new SQLiteCommand(String.Format(@"
                     UPDATE Notes
                     SET content='{0}'
-                    WHERE id='{1}'", content, id), this.conn);
+                    WHERE id='{1}';", content, id), this.conn);
             cmd.ExecuteNonQuery();
         }
 
@@ -183,7 +183,7 @@ namespace EZ_Notes
             cmd = new SQLiteCommand(String.Format(@"
                     UPDATE Notes
                     SET date='{0}'
-                    WHERE id='{1}'", date, id), this.conn);
+                    WHERE id='{1}';", date, id), this.conn);
             cmd.ExecuteNonQuery();
         }
 
@@ -205,14 +205,14 @@ namespace EZ_Notes
             // Création d'une nouvelle note dans la base
             cmd = new SQLiteCommand(String.Format(@"
                 INSERT INTO Notes(name, content, date)
-                VALUES('{0}','{1}', '{2}')",
+                VALUES('{0}','{1}', '{2}');",
                 rdmName, "", "", date), this.conn);
             cmd.ExecuteNonQuery();
 
             // Récupération de l'id de la note généré par la base
             cmd = new SQLiteCommand(String.Format(@"
                 SELECT id FROM Notes
-                WHERE name='{0}'", rdmName), this.conn);
+                WHERE name='{0}';", rdmName), this.conn);
             sqlite_datareader = cmd.ExecuteReader();
 
             while (sqlite_datareader.Read())
@@ -221,7 +221,7 @@ namespace EZ_Notes
             // Assignation de la note à l'utilisateur connecté
             cmd = new SQLiteCommand(String.Format(@"
                 INSERT INTO UserToNote(idUser, idNote)
-                VALUES('{0}','{1}')",
+                VALUES('{0}','{1}');",
                 this.authenticatedUser.GetId(), id), this.conn);
             cmd.ExecuteNonQuery();
 
@@ -260,12 +260,12 @@ namespace EZ_Notes
 
             cmd = new SQLiteCommand(String.Format(@"
                 DELETE FROM UserToNote
-                WHERE idUser='{0}' AND idNote='{1}'",
+                WHERE idUser='{0}' AND idNote='{1}';",
                 this.authenticatedUser.GetId(), id), this.conn);
             cmd.ExecuteNonQuery();
             cmd = new SQLiteCommand(String.Format(@"
                 DELETE FROM Notes
-                WHERE id='{0}'", id), this.conn);
+                WHERE id='{0}';", id), this.conn);
             cmd.ExecuteNonQuery();
         }
 

@@ -38,7 +38,6 @@
             this.deleteStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selectAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.vScrollBar2 = new System.Windows.Forms.VScrollBar();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.noteToolStripMenuAccueil = new System.Windows.Forms.ToolStripMenuItem();
             this.nouvelleNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -168,15 +167,6 @@
             this.clearToolStripMenuItem.Size = new System.Drawing.Size(172, 30);
             this.clearToolStripMenuItem.Text = "Clear All";
             this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearAllToolStripMenuItem_Click);
-            // 
-            // vScrollBar2
-            // 
-            this.vScrollBar2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.vScrollBar2.Location = new System.Drawing.Point(961, 0);
-            this.vScrollBar2.Name = "vScrollBar2";
-            this.vScrollBar2.Size = new System.Drawing.Size(17, 385);
-            this.vScrollBar2.TabIndex = 1;
             // 
             // menuStrip2
             // 
@@ -377,14 +367,14 @@
             // lowercaseToolStripMenuItem
             // 
             this.lowercaseToolStripMenuItem.Name = "lowercaseToolStripMenuItem";
-            this.lowercaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lowercaseToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.lowercaseToolStripMenuItem.Text = "&minuscule";
             this.lowercaseToolStripMenuItem.Click += new System.EventHandler(this.lowercaseToolStripMenuItem_Click);
             // 
             // uppercaseToolStripMenuItem
             // 
             this.uppercaseToolStripMenuItem.Name = "uppercaseToolStripMenuItem";
-            this.uppercaseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.uppercaseToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.uppercaseToolStripMenuItem.Text = "&MAJUSCULE";
             this.uppercaseToolStripMenuItem.Click += new System.EventHandler(this.uppercaseToolStripMenuItem_Click);
             // 
@@ -516,7 +506,7 @@
             // lineColumnStatusLabel
             // 
             this.lineColumnStatusLabel.Name = "lineColumnStatusLabel";
-            this.lineColumnStatusLabel.Size = new System.Drawing.Size(962, 17);
+            this.lineColumnStatusLabel.Size = new System.Drawing.Size(931, 17);
             this.lineColumnStatusLabel.Spring = true;
             this.lineColumnStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -544,7 +534,6 @@
             this.ControlBox = false;
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.vScrollBar2);
             this.Controls.Add(this.noteContent);
             this.Controls.Add(this.menuStrip2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -577,7 +566,6 @@
         private System.Windows.Forms.ToolStripMenuItem editionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem créerUneNouvelleNoteToolStripMenuItem;
         private System.Windows.Forms.RichTextBox noteContent;
-        private System.Windows.Forms.VScrollBar vScrollBar2;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem noteToolStripMenuAccueil;
         private System.Windows.Forms.ToolStripMenuItem nouvelleNoteToolStripMenuItem;
