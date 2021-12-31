@@ -119,6 +119,7 @@
             this.menuStripPrincipalSearch.Name = "menuStripPrincipalSearch";
             this.menuStripPrincipalSearch.Size = new System.Drawing.Size(78, 20);
             this.menuStripPrincipalSearch.Text = "Rechercher";
+            this.menuStripPrincipalSearch.Click += new System.EventHandler(this.menuStripPrincipalSearch_Click);
             // 
             // menuStripPrincipalAddNote
             // 

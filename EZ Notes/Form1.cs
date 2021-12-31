@@ -6,6 +6,7 @@ using System.Data.SQLite;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using Microsoft.Toolkit.Uwp.Notifications;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -382,6 +383,11 @@ namespace EZ_Notes
             listNotes[pos].Show();
         }
         public DataGridView GetViewNotes() { return ViewNotes; }
+
+        private void menuStripPrincipalSearch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     public class UserInfo

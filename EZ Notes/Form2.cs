@@ -22,7 +22,7 @@ namespace EZ_Notes
         private string date;
         private MenuPrincipal menu;
 
-        // editor vars
+        // text editor vars
         private List<string> colorList = new List<string>();
         private const int MIDDLE = 382;    // middle sum of RGB - max is 765
         private int sumRGB;    // sum of the selected colors RGB
@@ -180,7 +180,6 @@ namespace EZ_Notes
         private void noteToolStripMenuAccueil_Click(object sender=null, EventArgs e=null)
         {
             this.Hide();
-            //menu.UpdateNoteContent(this.id, this.contenu);
             menu.SaveNote(this);
         }
 
@@ -220,6 +219,12 @@ namespace EZ_Notes
             if (e.KeyChar == '')
                 noteToolStripMenuAccueil_Click();
         }
+
+        private void nouveauRappelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         /*  ### TEXT EDITOR ###
          * Gestion des fonctionnalités propre à l'editeur de texte des notes
          */

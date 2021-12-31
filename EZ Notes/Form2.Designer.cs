@@ -78,6 +78,7 @@
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.printDialog = new System.Windows.Forms.PrintDialog();
             this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
+            this.nouveauRappelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.richContextStrip.SuspendLayout();
             this.menuStrip2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -173,6 +174,7 @@
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.noteToolStripMenuAccueil,
             this.nouvelleNoteToolStripMenuItem,
+            this.nouveauRappelToolStripMenuItem,
             this.paramètresToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
@@ -506,7 +508,7 @@
             // lineColumnStatusLabel
             // 
             this.lineColumnStatusLabel.Name = "lineColumnStatusLabel";
-            this.lineColumnStatusLabel.Size = new System.Drawing.Size(931, 17);
+            this.lineColumnStatusLabel.Size = new System.Drawing.Size(962, 17);
             this.lineColumnStatusLabel.Spring = true;
             this.lineColumnStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -527,6 +529,13 @@
             this.printPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog.Icon")));
             this.printPreviewDialog.Name = "printPreviewDialog";
             this.printPreviewDialog.Visible = false;
+            // 
+            // nouveauRappelToolStripMenuItem
+            // 
+            this.nouveauRappelToolStripMenuItem.Name = "nouveauRappelToolStripMenuItem";
+            this.nouveauRappelToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
+            this.nouveauRappelToolStripMenuItem.Text = "Nouveau Rappel";
+            this.nouveauRappelToolStripMenuItem.Click += new System.EventHandler(this.nouveauRappelToolStripMenuItem_Click);
             // 
             // Note
             // 
@@ -613,5 +622,6 @@
         private System.Drawing.Printing.PrintDocument printDocument;
         private System.Windows.Forms.PrintDialog printDialog;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
+        private System.Windows.Forms.ToolStripMenuItem nouveauRappelToolStripMenuItem;
     }
 }
